@@ -968,13 +968,13 @@ if page == "🧠 Classifier":
         with col1:
             with st.container(border=True):
                 st.markdown('<div class="bc-card-label">Original MRI</div>', unsafe_allow_html=True)
-                st.image(result["rgb_image"], use_column_width=True)
+                st.image(result["rgb_image"], width="stretch")
 
         with col2:
             with st.container(border=True):
                 st.markdown('<div class="bc-card-label">Localized MRI</div>', unsafe_allow_html=True)
                 display_image = result["boxed_image"] if not is_no_tumor else result["rgb_image"]
-                st.image(display_image, use_column_width=True)
+                st.image(display_image, width="stretch")
 
         st.markdown('<div style="height:18px;"></div>', unsafe_allow_html=True)
 
