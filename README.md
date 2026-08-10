@@ -81,56 +81,15 @@ This localization stage:
 
 The separate experimental `grayscale_detector.py` file is not required to run the final dashboard because the required localization functions are already included in `app.py`.
 
-## Project Structure
-
-```text
-DASHBOARD/
-├── models/
-│   ├── fresh_efficientnetb0_V2_final.keras
-│   ├── fresh_efficientnetv2s_V2_deep_final.keras
-│   └── fresh_inceptionv3_V2_phase1_final.keras
-├── app.py
-├── logo.png
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-Only include `logo.png` if it is referenced by `app.py`. The training datasets, test datasets, notebooks, and the separate `grayscale_detector.py` file are not required for running the dashboard.
-
-## Installation
-
-1. Download or clone the repository.
-2. Open a terminal inside the `DASHBOARD` folder.
-3. Install the required Python packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Run the Dashboard
-
-```bash
-streamlit run app.py
-```
-
-The dashboard should open automatically in your default web browser. If it does not, open the local URL displayed in the terminal.
-
-## Important GitHub File-Size Note
-
-GitHub does not accept files larger than 100 MiB through normal Git tracking. If any `.keras` model file exceeds this limit, store the model with Git Large File Storage (Git LFS) or use another supported model-hosting solution. Make sure the model paths used in `app.py` match the repository structure.
 
 ## Clinical Disclaimer
 
 This AI prediction is intended to support clinical decision-making and should always be confirmed by a qualified radiologist or physician. The dashboard is an academic prototype and is not a certified medical device.
 
-## Data Source
+## Data Sources
 
-- Mendeley Data: [Brain Tumor MRI Dataset (Glioma, Meningioma, Pituitary, No Tumor), Version 5](https://doi.org/10.17632/zwr4ntf94j.5)
-- External evaluation and retraining images: [Brain Tumor MRI Dataset on Kaggle](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
+- Main training and internal evaluation dataset: [Brain Tumor MRI Dataset (Glioma, Meningioma, Pituitary, No Tumor), Version 5 — Mendeley Data](https://doi.org/10.17632/zwr4ntf94j.5)
+- External evaluation and retraining images for glioma, meningioma, and pituitary: [Brain Tumor Dataset by Jun Cheng — Figshare](https://doi.org/10.6084/m9.figshare.1512427)
+- External evaluation and retraining images for the no-tumor class: [Brain Tumor MRI Dataset on Kaggle](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset)
 
-## Documentation
 
-- [Streamlit installation and command-line documentation](https://docs.streamlit.io/get-started/installation/command-line)
-- [GitHub documentation for large files](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
-- [Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage)
