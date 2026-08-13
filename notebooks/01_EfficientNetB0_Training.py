@@ -5,7 +5,7 @@
 #
 # TRAIN:
 #   - Mendeley training split
-#   - All added Kaggle training images
+#   - All added extrnal training images
 #
 # VALIDATION:
 #   - Mendeley validation only
@@ -14,7 +14,7 @@
 #   - Mendeley internal test only
 #
 # EXTERNAL TEST:
-#   - Untouched Kaggle test folders only
+#   - Untouched External test folders only
 #
 # Important:
 #   - No previous MRI model is loaded.
@@ -361,7 +361,7 @@ print("✅ Mendeley case-leakage check passed.")
 
 
 # ============================================================
-# 10. VERIFY KAGGLE IMAGES ARE TRAINING-ONLY
+# 10. VERIFY EXTERNAL IMAGES ARE TRAINING-ONLY
 # ============================================================
 
 invalid_kaggle_rows = manifest_df[
@@ -670,9 +670,6 @@ data_augmentation = models.Sequential(
 
 # ============================================================
 # 17. BUILD FRESH EFFICIENTNETB0
-#
-# Do not add include_preprocessing=True.
-# Your TensorFlow version previously rejected that argument.
 # ============================================================
 
 print("\n" + "=" * 75)
