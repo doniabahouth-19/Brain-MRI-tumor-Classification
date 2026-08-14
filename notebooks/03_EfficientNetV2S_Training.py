@@ -8,7 +8,7 @@
 #       15% validation
 #       15% internal test
 #
-#   Added Kaggle images:
+#   Added External images:
 #       100% training only
 #
 #   Untouched Kaggle test images:
@@ -216,13 +216,13 @@ print("\nAll required folders were found.")
 
 
 # ============================================================
-# 6. IDENTIFY MENDELEY AND KAGGLE FILENAMES
+# 6. IDENTIFY MENDELEY AND EXTERNAL IMAGES FILENAMES
 # ============================================================
 
 def identify_image_source(filename, class_name):
     """
     Identify whether an image follows the original Mendeley
-    naming pattern or the added Kaggle/random naming pattern.
+    naming pattern or the added images/random naming pattern.
 
     Mendeley examples:
         G_6_BR.jpg
@@ -466,7 +466,7 @@ mendeley_split_df = pd.concat(
 
 
 # ============================================================
-# 10. ADD ALL KAGGLE IMAGES TO TRAINING ONLY
+# 10. ADD ALL EXTERNAL IMAGES TO TRAINING ONLY
 # ============================================================
 
 kaggle_df = kaggle_df.copy()
@@ -509,7 +509,7 @@ if len(leaking_cases) > 0:
 print("\nMendeley case-leakage check: PASSED")
 
 
-# Check that every Kaggle image is training only.
+# Check that every external image is training only.
 invalid_kaggle_rows = combined_split_df[
     (combined_split_df["source"] == "kaggle")
     &
@@ -1784,7 +1784,7 @@ print(
 )
 
 print(
-    "External Kaggle test accuracy: "
+    "External images test accuracy: "
     f"{external_results['accuracy'] * 100:.2f}%"
 )
 
@@ -1802,7 +1802,7 @@ print(
 )
 
 print(
-    "✅ All 650 added Kaggle images were assigned "
+    "✅ All 650 added External images were assigned "
     "to training only."
 )
 
@@ -1812,6 +1812,6 @@ print(
 )
 
 print(
-    "✅ Untouched Kaggle test images were used only "
+    "✅ Untouched External test images were used only "
     "for the final external evaluation."
 )
