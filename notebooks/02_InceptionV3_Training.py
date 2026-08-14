@@ -4,7 +4,7 @@
 # This cell:
 #   1. Loads the best saved Phase 1 InceptionV3 model
 #   2. Loads the exact internal test split from the manifest
-#   3. Loads the untouched external Kaggle test
+#   3. Loads the untouched external images test
 #   4. Evaluates both datasets
 #   5. Shows classification reports and confusion matrices
 #   6. Saves probabilities for the future ensemble
